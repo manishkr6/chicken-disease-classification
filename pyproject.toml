@@ -8,6 +8,7 @@ authors = [
 ]
 requires-python = ">=3.11"
 dependencies = [
+    "certifi>=2026.7.22",
     "dvc>=3.67.1",
     "ensure==1.0.2",
     "flask>=3.1.3",
