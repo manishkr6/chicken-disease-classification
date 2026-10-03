@@ -1,5 +1,5 @@
 from chicken_disease_classification.config.configuration import ConfigurationManager
-from chicken_disease_classification.components.prepate_callbacks import PrepareCallback
+from chicken_disease_classification.components.prepare_callbacks import PrepareCallback
 from chicken_disease_classification.components.training import Training
 from chicken_disease_classification import logger
 
