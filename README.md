@@ -1,6 +1,6 @@
 # Chicken Disease Classification
 
-End-to-end deep learning classification system with automated DVC pipelines, CI/CD, and cloud deployment. This project aims to accurately classify chicken diseases (like Coccidiosis) from fecal images using a Convolutional Neural Network (CNN) built with TensorFlow and Keras.
+End-to-end deep learning classification system with automated DVC pipelines, CI/CD, Docker containerization, and cloud deployment. This project aims to accurately classify chicken diseases (like Coccidiosis) from fecal images using a Convolutional Neural Network (CNN) built with TensorFlow and Keras.
 
 ## User Interface
 
@@ -14,7 +14,7 @@ End-to-end deep learning classification system with automated DVC pipelines, CI/
 - **Frontend**: HTML, CSS, JS
 - **Pipeline & MLOps**: DVC (Data Version Control)
 - **Visualization**: Matplotlib, Seaborn
-- **CI/CD & Deployment**: GitHub Actions (Configurations for AWS/Azure available)
+- **CI/CD, Containerization & Deployment**: GitHub Actions, Docker (Configurations for AWS/Azure available)
 
 ## Workflow
 
@@ -56,9 +56,18 @@ dvc repro
 *Note: This will execute the stages defined in `dvc.yaml` (Data Ingestion -> Prepare Base Model -> Training -> Evaluation).*
 
 ### Step 5: Start the web application
+
+**Option 1: Using Python**
 ```bash
 python app.py
 ```
+
+**Option 2: Using Docker**
+```bash
+docker build -t chicken-disease-app .
+docker run -p 8080:8080 chicken-disease-app
+```
+
 Open your browser and navigate to `http://localhost:8080`. You can upload an image, click 'Predict', and get the disease classification results.
 
 ## Model Training Parameters
